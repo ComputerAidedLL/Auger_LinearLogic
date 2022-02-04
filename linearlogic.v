@@ -107,10 +107,11 @@ apply ProvableWrapper;
 simpl;
 tac;
 simpl;
+let H := fresh in
 match goal with
 | |- provable (?hd::?tl) =>
   cut (these_provable hd (stack tl)); simpl;
-  [now intros []; simpl; clear;
+  [now intros [H]; revert H; simpl; clear;
    repeat case linear_dual_idempotent
   |repeat case linear_dual_idempotent]
 end.
