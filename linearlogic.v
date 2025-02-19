@@ -1,6 +1,6 @@
 (** Linear Logic in Coq *)
-Require Import Utf8_core.
-Require Import List.
+From Stdlib Require Import Utf8_core.
+From Stdlib Require Import List.
 Set Implicit Arguments.
 Inductive linear_expression: Prop :=
 | D: ∀ (is_positive: bool)
